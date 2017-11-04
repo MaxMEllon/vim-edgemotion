@@ -8,7 +8,7 @@ scriptencoding utf-8
 let s:DIRECTION = { 'FORWARD': 1, 'BACKWARD': 0 }
 
 function! edgemotion#move(dir) abort
-  if mode(1) is# 'no'
+  if mode(1) is# 'no' || mode(1) is# 'n'
     normal! V
   endif
   let next_cmd = a:dir is# s:DIRECTION.FORWARD ? 'gj' : 'gk'
